@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main (){
+	return 0;
+}
+
+%*c ======> pula 1 caractere, ex.: espaços;
+
+criar MATRIZ ==> 'tipo' 'nome' ['linhas']['colunas'] ===> funciona como vetor, ou seja, nº de linhas = 'linhas' - 1; nº de colunas = 'colunas' - 1; tamanho total = ['linhas' - 1]['colunas' - 1].;
+
