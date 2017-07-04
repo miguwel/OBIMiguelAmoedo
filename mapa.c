@@ -4,16 +4,16 @@
 int main(){
 
 	int C, L, i, j, c1, l1;
-	char Mapa[100][100];
-	scanf("%d%d", &L, &C);
+	char Mapa[102][102];
+	scanf("%d %d", &L, &C);
 
-	for(i = 0; i <= L; i++)
+	for(i = 1; i <= L; i++)
 	{
-		for (j = 0; j <= C; j++)
+		scanf("%*c");
+		for (j = 1; j <= C; j++)
 		{
 			scanf("%c", &Mapa[i][j]);
-
-			if(Mapa[i][j] == 'o' || Mapa[i][j] == 'O')
+			if(Mapa[i][j] == 'o')
 			{
 				l1 = i;
 				c1 = j;
@@ -21,37 +21,27 @@ int main(){
 		}
 	}
 
-	int andei = 1;
-	while(andei != 0)
+	int achei = 0;
+	while(achei == 0)
 	{
-		andei = 0;
+		Mapa[l1][c1] = '.';
+		if(l1 != 1 && Mapa[l1-1][c1] == 'H')
+			l1--;
 
-		if((Mapa[l1-1][c1] == 'H' || Mapa[l1-1][c1] == 'h') && l1>0)
-		{
-			andei = 1;
-			l1 = l1 - 1;
-		}
+		else if(l1 != L && Mapa[l1+1][c1] == 'H' )
+			l1++;
 
-		else if((Mapa[l1+1][c1] == 'H' || Mapa[l1+1][c1] == 'h') && l1<L)
-		{
-			andei = 1;
-			l1 = l1 + 1;
-		}
+		else if(c1 != 1 && Mapa[l1][c1-1] == 'H')
+			c1--;
 
-		else if((Mapa[l1][c1-1] == 'H' || Mapa[l1][c1-1] == 'h') && c1>0)
-		{
-			andei = 1;
-			c1 = c1 - 1;
-		}
-		else if((Mapa[l1][c1+1] == 'H' || Mapa[l1][c1+1] == 'h') && c1<C)
-		{
-			andei = 1;
-			c1 = c1 + 1;
-		}
+		else if(c1 != C && Mapa[l1][c1+1] == 'H')
+			c1++;
+
+		else
+			achei = 1;
 	}
 
-	printf("%d %d\n", c1, l1);
-
-	
+	printf("%d %d\n", l1, c1);
+s
 	return 0;
 }
