@@ -1,7 +1,8 @@
 #include <stdio.h>
- 
+#include <string.h>
+
 int main() {
- 
+
 	int N, R, V, i, resto;
 
 	scanf("%d", &N);
