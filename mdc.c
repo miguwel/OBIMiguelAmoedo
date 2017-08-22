@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
+<<<<<<< HEAD
 int main (){
+=======
+int main() {
+>>>>>>> 0136f025d114f43a8af938d3bc0c5ee62b454be5
 
 	int N, R, V, i, resto;
 
@@ -27,5 +31,10 @@ int main (){
 	{
 		printf("%d\n", mdc[i]);
 	}
+<<<<<<< HEAD
 	return 0;
+=======
+ 
+    return 0;
+>>>>>>> 0136f025d114f43a8af938d3bc0c5ee62b454be5
 }
